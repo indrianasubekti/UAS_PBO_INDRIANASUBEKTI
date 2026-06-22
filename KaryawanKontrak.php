@@ -18,7 +18,7 @@ class KaryawanKontrak extends Karyawan {
     }
 
     // Implementasi metode hitungGajiBersih()
-    // Gaji Bersih = Hari Kerja Masuk x Gaji Dasar Per Hari
+    // METHOD OVERRIDING: Menghitung gaji berdasarkan kehadiran murni
     public function hitungGajiBersih() {
         return $this->hariKerjaMasuk * $this->gajiDasarPerHari;
     }

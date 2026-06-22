@@ -18,9 +18,10 @@ class KaryawanMagang extends Karyawan {
     }
 
     // Implementasi metode hitungGajiBersih()
-    // Gaji Bersih = Uang Saku Bulanan + (Hari Kerja Masuk x Gaji Dasar Per Hari)
+    // METHOD OVERRIDING: Logika Baru dengan Potongan 20% (Dikalikan 0.80)
     public function hitungGajiBersih() {
-        return $this->uangSakuBulanan + ($this->hariKerjaMasuk * $this->gajiDasarPerHari);
+        $plafonHarianTotal = $this->hariKerjaMasuk * $this->gajiDasarPerHari;
+        return $plafonHarianTotal * 0.80;
     }
 
     // Implementasi metode tampilkanProfilKaryawan()
@@ -30,7 +31,7 @@ class KaryawanMagang extends Karyawan {
         echo "Nama Karyawan       : " . $this->nama_karyawan . "<br>";
         echo "Departemen          : " . $this->departemen . "<br>";
         echo "Sertifikat/Program  : " . $this->sertifikatKampusMerdeka . "<br>";
-        echo "Uang Saku Bulanan   : Rp " . number_format($this->uangSakuBulanan, 0, ',', '.') . "<br>";
+        echo "Info                : Dikenakan potongan OJT/Pelatihan sebesar 20%.<br>"; // Sesuai logika baru
         echo "Total Pendapatan    : Rp " . number_format($this->hitungGajiBersih(), 0, ',', '.') . "<br><br>";
     }
 

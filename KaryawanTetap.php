@@ -18,7 +18,7 @@ class KaryawanTetap extends Karyawan {
     }
 
     // Implementasi metode hitungGajiBersih()
-    // Gaji Bersih = (Hari Kerja Masuk x Gaji Dasar Per Hari) + Tunjangan Kesehatan
+    // METHOD OVERRIDING: Akumulasi harian + Tunjangan Kesehatan
     public function hitungGajiBersih() {
         return ($this->hariKerjaMasuk * $this->gajiDasarPerHari) + $this->tunjanganKesehatan;
     }
